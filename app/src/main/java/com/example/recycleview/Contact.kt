@@ -3,14 +3,10 @@ package com.example.recycleview
 data class Contact(val name:String)
 
 
-
-const private val lastContactId = 0
-
-fun createContactsList(numContacts: Int): ArrayList<Contact> {
-    var counter = lastContactId
+fun createContactsList(start:Int , numContacts: Int): ArrayList<Contact> {
     val contacts = ArrayList<Contact>()
-    for (i in 1..numContacts) {
-        contacts.add( Contact("  Person " + ++counter)    )
+    for (i in start until start+numContacts) {
+        contacts.add( Contact("  Person $i")    )
     }
     return contacts
 }
