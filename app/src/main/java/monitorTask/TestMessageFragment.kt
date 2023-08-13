@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.example.recycleview.R
 
-class TestMessageFragment(val callBack : (String)->Unit) :Fragment() {
+class TestMessageFragment(val callBack:CallBacksInterface) :Fragment() {
     private lateinit var mainView: View
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,12 +25,17 @@ class TestMessageFragment(val callBack : (String)->Unit) :Fragment() {
 
         val myButton = mainView.findViewById<Button>(R.id.buttonToast)
 
-        val parentActivity = requireActivity() as TestActivity
+//        val parentActivity = requireActivity() as TestActivity
 
         myButton.setOnClickListener {
-            callBack("from TestMessageFragment")
-            parentActivity.showMessage("from TestMessageFragment requireActivity")
+//            callBack("from TestMessageFragment")
+//            parentActivity.showMessage("from TestMessageFragment requireActivity")
+            callBack.showMessage("from TestMessageFragment requireActivity")
 
         }
+    }
+
+    interface CallBacksInterface{
+        fun showMessage(text:String)
     }
 }

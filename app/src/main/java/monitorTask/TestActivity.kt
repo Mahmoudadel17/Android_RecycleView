@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.recycleview.R
 
-class TestActivity : AppCompatActivity() {
+class TestActivity : AppCompatActivity(), TestMessageFragment.CallBacksInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
@@ -15,7 +15,7 @@ class TestActivity : AppCompatActivity() {
 
 
     private fun init(){
-        val testMessageFragment = TestMessageFragment(showMessage)
+        val testMessageFragment = TestMessageFragment(this)
         addFragments(testMessageFragment)
     }
 
@@ -25,12 +25,15 @@ class TestActivity : AppCompatActivity() {
         transaction.commit()
     }
 
-
-
-     val showMessage =  fun(myText:String){
-        Toast.makeText(this,"hi $myText",Toast.LENGTH_SHORT).show()
-
+    override fun showMessage(text: String) {
+        Toast.makeText(this,"hi $text",Toast.LENGTH_SHORT).show()
     }
 
+
+//     val showMessage =  fun(myText:String){
+//        Toast.makeText(this,"hi $myText",Toast.LENGTH_SHORT).show()
+//
+//    }
+//
 
 }
