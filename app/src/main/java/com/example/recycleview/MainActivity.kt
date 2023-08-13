@@ -2,7 +2,9 @@ package com.example.recycleview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentContainerView
 import androidx.navigation.fragment.NavHostFragment
@@ -20,6 +22,8 @@ import androidx.navigation.ui.setupWithNavController
 
 
 class MainActivity : AppCompatActivity() {
+
+
     private lateinit var bottomNav: BottomNavigationView
     private lateinit var fragment: FragmentContainerView
 
@@ -78,5 +82,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+
 }
 

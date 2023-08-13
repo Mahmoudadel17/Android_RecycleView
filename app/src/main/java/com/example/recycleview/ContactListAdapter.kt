@@ -26,6 +26,7 @@ class ContactListAdapter (val contactList: List<Contact>,private val onNavigate:
         holder.myTextView.text = contactList.get(position).name
         holder.myButtom.text = "Click"
 
+
         holder.myButtom.setOnClickListener {
            // Toast.makeText(context, "you pressed item number ${position+1}", Toast.LENGTH_SHORT).show()
             onNavigate(position+1)

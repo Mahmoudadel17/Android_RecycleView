@@ -28,14 +28,15 @@ class ContactListFragment(private val start:Int, private val contactNumbers:Int)
     }
 
     private val navigateToFragment = fun(position:Int) {
+
         val bundle = Bundle()
-        bundle.putString("dataKey", "you pressed item number $position")
+        bundle.putString("dataKey", "you pressed item number ${(start-1) + position}")
 
         val viewPersonFragment = ViewPersonFragment()
         viewPersonFragment.arguments = bundle
 
         parentFragmentManager.beginTransaction()
-            .replace(R.id.fragmentHome,viewPersonFragment)
+            .add(R.id.fragmentHome,viewPersonFragment)
             .addToBackStack(null)
             .commit()
     }
