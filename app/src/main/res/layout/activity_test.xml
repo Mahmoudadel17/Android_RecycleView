@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="monitorTask.TestActivity"
+    tools:context="mentorTask.TestActivity"
     android:background="@color/white"
     >
     <androidx.fragment.app.FragmentContainerView

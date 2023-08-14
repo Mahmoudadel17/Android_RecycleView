@@ -1,4 +1,4 @@
-package monitorTask
+package mentorTask
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,7 +12,6 @@ class TestActivity : AppCompatActivity(), TestMessageFragment.CallBacksInterface
         setContentView(R.layout.activity_test)
         init()
     }
-
 
     private fun init(){
         val testMessageFragment = TestMessageFragment(this)
